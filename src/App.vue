@@ -1,22 +1,12 @@
 <script setup lang="ts">
-import TheApplicationBar from "./components/ui/TheApplicationBar.vue";
 </script>
 
 <template>
-  <div id="app">
-    <TheApplicationBar />
-    <router-view class="content" />
-  </div>
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
 <style scoped>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.content {
-  padding-top: 5.5vh;
-  padding-left: 10%;
-}
+@import "./assets/base.css";
 </style>
