@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { checkRowLength, defineBoxes, defineColumns, validateArray, validateGameBoard } from '../utils/sudoku'
+import { boardIsFull, checkRowLength, countNInBoard, defineBoxes, defineColumns, validateArray, validateGameBoard } from '../utils/sudoku'
 
 // 测试 checkRowLength 函数
 it('returns true if length of input arrray is 9', () => {
@@ -150,4 +150,56 @@ it("returns false if any part of game board is invalid", () => {
     expect(validateGameBoard(invalidColumnBoard)).toBe(false);
     expect(validateGameBoard(invalidBoxBoard)).toBe(false);
     expect(validateGameBoard(tooLongBoard)).toBe(false);
+});
+
+// 测试 boardIsFull 函数
+const completeBoardF = [
+    [3, 9, 1, 2, 8, 6, 5, 7, 4],
+    [4, 8, 7, 3, 5, 9, 1, 2, 6],
+    [6, 5, 2, 7, 1, 4, 8, 3, 9],
+    [8, 7, 5, 4, 3, 1, 6, 9, 2],
+    [2, 1, 3, 9, 6, 7, 4, 8, 5],
+    [9, 6, 4, 5, 2, 8, 7, 1, 3],
+    [1, 4, 9, 6, 7, 3, 2, 5, 8],
+    [5, 3, 8, 1, 4, 2, 9, 6, 7],
+    [7, 2, 6, 8, 9, 5, 3, 4, 1],
+];
+
+const incompleteBoard = [
+    [0, 9, 1, 2, 8, 6, 5, 7, 4],
+    [4, 8, 7, 0, 5, 9, 1, 2, 6],
+    [6, 5, 2, 7, 1, 4, 8, 0, 9],
+    [8, 7, 5, 4, 0, 1, 6, 9, 2],
+    [2, 1, 3, 9, 6, 7, 4, 8, 5],
+    [9, 6, 4, 5, 2, 8, 7, 1, 3],
+    [1, 4, 9, 0, 7, 3, 2, 5, 8],
+    [5, 3, 8, 1, 4, 2, 9, 0, 7],
+    [7, 2, 0, 8, 9, 5, 3, 4, 1],
+];
+
+it("returns true if board contains no empty spaces", () => {
+    expect(boardIsFull(completeBoardF)).toBe(true);
+});
+it("returns false if board contains empty spaces", () => {
+    expect(boardIsFull(incompleteBoard)).toBe(false);
+});
+
+// 测试 countNInBoard 函数
+const completeBoardN = [
+    [3, 9, 1, 2, 8, 6, 5, 7, 4],
+    [4, 8, 7, 3, 5, 9, 1, 2, 6],
+    [6, 5, 2, 7, 1, 4, 8, 3, 9],
+    [8, 7, 5, 4, 3, 1, 6, 9, 2],
+    [2, 1, 3, 9, 6, 7, 4, 8, 5],
+    [9, 6, 4, 5, 2, 8, 7, 1, 3],
+    [1, 4, 9, 6, 7, 3, 2, 5, 8],
+    [5, 3, 8, 1, 4, 2, 9, 6, 7],
+    [7, 2, 6, 8, 9, 5, 3, 4, 1],
+];
+
+it("returns correct count of given value present in game board", () => {
+    expect(countNInBoard(1, completeBoardN)).toBe(9);
+    expect(countNInBoard(2, completeBoardN)).toBe(9);
+    expect(countNInBoard(3, completeBoardN)).toBe(9);
+    expect(countNInBoard(0, completeBoardN)).toBe(0);
 });

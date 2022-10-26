@@ -117,3 +117,27 @@ const checkBoardSize = (boardArray: Array<Array<number>>): boolean => {
     })
     return isValid
 }
+
+export const boardIsFull = (boardArray: Array<Array<number>>): boolean => {
+    let reuslt = true
+
+    boardArray.forEach((row) => {
+        let count = 0
+        row.forEach((value) => (count += value))
+        if (count !== 45) reuslt = false
+    })
+
+    return reuslt
+}
+
+export const countNInBoard = (n: number, boardArray: Array<Array<number>>): number => {
+    let count = 0
+
+    boardArray.forEach((row) => {
+        row.forEach((value) => {
+            if (value === n) count++
+        })
+    })
+
+    return count
+}
