@@ -10,6 +10,7 @@
     "deploy": "push-dir --dir=dist --branch=production --cleanup"
   },
   "dependencies": {
+    "pinia": "^2.0.23",
     "vue": "^3.2.37",
     "vue-router": "4"
   },
