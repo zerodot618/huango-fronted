@@ -20,9 +20,9 @@ const erasing = () => {
 </script>
 <template>
     <div class="number-selector">
-        <img v-if="activeValue === 0" class="erasing" src="../../../assets/eraser.png" width="20" alt="erase"
+        <img v-if="activeValue === 0" class="erasing" src="../../../../assets/eraser.png" width="20" alt="erase"
             @click="() => (toggleActive(0))" />
-        <img v-else src="../../../assets/eraser.png" width="20" alt="erase" @click="
+        <img v-else src="../../../../assets/eraser.png" width="20" alt="erase" @click="
         () => (toggleActive(0))" />
         <div class="selection" v-for="number in numbers" :key="number">
             <button v-if="activeValue === number" class="selected" :disabled="disableSelection(number)">
@@ -37,13 +37,13 @@ const erasing = () => {
 <style scoped>
 .number-selector {
     width: 80%;
-    height: 48px;
     border: 0.5px solid #ffffff80;
     border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    padding-left: 8px;
 }
 
 .number-selector img {

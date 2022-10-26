@@ -15,7 +15,6 @@ const props = defineProps({
 <template>
     <div class="puzzle-controls">
         <div class="reset">
-            <p>Reset</p>
             <img class="icon" src="../../../../assets/undo-arrow.png" width="20" alt="reset"
                 @click="() => (resetBoard())" />
         </div>
@@ -28,7 +27,7 @@ const props = defineProps({
 .puzzle-controls {
     background: var(--bg-teal-mute);
     width: 100%;
-    height: 88px;
+    height: 10%;
     border-top: 0.5px solid #ffffff80;
     display: flex;
     font-weight: 200;
@@ -39,7 +38,6 @@ const props = defineProps({
 
 .puzzle-controls .reset {
     width: 32px;
-    height: 48px;
     aspect-ratio: 1/1;
     text-align: center;
     text-transform: uppercase;
