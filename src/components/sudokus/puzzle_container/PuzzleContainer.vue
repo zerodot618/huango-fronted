@@ -127,7 +127,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .container {
-    width: 800px;
+    width: calc(100vh - 88px);
     height: calc(100vh - 88px);
     background: var(--bg-teal-mute);
     border-left: 0.5px solid #ffffff80;
