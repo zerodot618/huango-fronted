@@ -108,14 +108,15 @@ onMounted(() => {
 </script>
 <template>
     <div class="container" v-if="!loading">
-        <div class="difficulty">
-            <p>Choose puzzle difficulty:</p>
-            <button @click="getDifficulty('easy')">Easy</button>
-            <button @click="getDifficulty('medium')">Medium</button>
-            <button @click="getDifficulty('hard')">Hard</button>
+        <div class="puzzle-header">
+            <div class="difficulty">
+                <p>难度:</p>
+                <button @click="getDifficulty('easy')">简单</button>
+                <button @click="getDifficulty('medium')">中等</button>
+                <button @click="getDifficulty('hard')">困难</button>
+            </div>
+            <GameTimer :currentTime="currentTime" />
         </div>
-        <GameTimer :currentTime="currentTime" />
-
         <PuzzleBoard :activeValue="activeValue" :toggleActive="toggleActive" :originalBoard="originalBoard"
             :completeBoard="completeBoard" :editBoard="editBoard" :completeTime="completeTime" />
         <PuzzleControls :activeValue="activeValue" :toggleActive="toggleActive" :originalBoard="originalBoard"
@@ -127,8 +128,8 @@ onMounted(() => {
 </template>
 <style scoped>
 .container {
-    width: calc(100vh - 88px);
-    height: calc(100vh - 88px);
+    width: calc(100vh - 100px);
+    height: calc(100vh - 100px);
     background: var(--bg-teal-mute);
     border-left: 0.5px solid #ffffff80;
     border-right: 0.5px solid #ffffff80;
@@ -136,6 +137,14 @@ onMounted(() => {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+}
+
+.puzzle-header {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
 }
 
 .difficulty {

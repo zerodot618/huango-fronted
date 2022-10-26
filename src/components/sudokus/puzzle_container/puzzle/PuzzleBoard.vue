@@ -42,7 +42,8 @@ const validation = (boardArray: Array<Array<number>>) => {
 </template>
 <style scoped>
 .puzzle-board {
-    width: 400px;
+    width: 70%;
+    height: 70%;
     aspect-ratio: 1/1;
     background: #ffffff20;
     display: flex;
