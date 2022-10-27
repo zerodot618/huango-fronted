@@ -12,7 +12,7 @@ import AppBar from '../components/sudokus/AppBar.vue';
 </template> 
 
 <style scoped>
-@import "../assets/sudoku-base.css";
+@import "../assets/css/sudoku-base.css";
 
 .app {
     width: 100vw;

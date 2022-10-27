@@ -15,7 +15,7 @@ const props = defineProps({
 <template>
     <div class="puzzle-controls">
         <div class="reset">
-            <img class="icon" src="../../../../assets/undo-arrow.png" width="20" alt="reset"
+            <img class="icon" src="../../../../assets/images/undo-arrow.png" width="20" alt="reset"
                 @click="() => (resetBoard())" />
         </div>
         <NumberSelector :activeValue="activeValue" :toggleActive="toggleActive" :originalBoard="originalBoard"
