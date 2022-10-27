@@ -1,24 +1,34 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { loginFields } from "@constants/formFields";
 import Input from "@components/auth/Input.vue";
+import FormExtra from "@components/auth/FormExtra.vue";
+import FormAction from "@components/auth/FormAction.vue";
 
-const handleChange = (e: any) => {
-
+const handleSubmit = (e: any) => {
+    console.log('登录')
+    e.preventDefault();
+    authenticateUser();
 }
 
-const loginState: Array<number> = []
+// Handle Login API Integration here
+const authenticateUser = () => {
 
+}
 
 </script>
 
 <template>
     <div class="w-2/5 mx-auto">
-        <form class="mt-8 space-y-6">
+        <form class="mt-8 space-y-6" @submit.prevent="handleSubmit">
             <div class="-space-y-px">
-                <Input v-for="(item, index) in loginFields" :key="index" :handleChange="handleChange"
-                    :value="loginState[item.id]" :labelText="item.labelText" :labelFor="item.labelFor" :id="item.id"
-                    :name="item.name" :type="item.type" :isRequired="item.isRequired" :placeholder="item.placeholder" />
+                <Input v-for="(item, index) in loginFields" :key="index" :labelText="item.labelText"
+                    :labelFor="item.labelFor" :id="item.id" :name="item.name" :type="item.type"
+                    :isRequired="item.isRequired" :placeholder="item.placeholder" />
             </div>
+
+            <FormExtra />
+            <FormAction action="submit" text="登录" />
         </form>
     </div>
 </template>

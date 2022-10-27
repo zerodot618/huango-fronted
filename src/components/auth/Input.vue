@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const props = defineProps<{
-    handleChange: { type: Function, required: true },
-    value: { type: String, required: true },
+    value?: string,
     key: any,
-    labelText: { type: String, required: true },
+    labelText: string,
     labelFor?: string,
     id: string,
     name: string,
@@ -22,7 +21,7 @@ const classString = fixedInputClass + props.customClass
         <label :for="labelFor" class="sr-only">
             {{ labelText }}
         </label>
-        <input :onchange="handleChange" :key="key" :value="value" :id="id" :name="name" :type="type"
-            :required="isRequired" :class="classString" :placeholder="placeholder" />
+        <input :key="key" :value="value" :id="id" :name="name" :type="type" :required="isRequired" :class="classString"
+            :placeholder="placeholder" />
     </div>
 </template>

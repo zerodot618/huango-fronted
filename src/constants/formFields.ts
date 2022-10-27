@@ -1,14 +1,4 @@
 // 登录
-// class LoginField {
-//     labelText: String
-//     labelFor: String
-//     id: String
-//     name: String
-//     type: String
-//     autoComplete: String
-//     isRequired: Boolean
-//     placeholder: String
-// }
 
 const loginFields: Array<Object> = [
     {
