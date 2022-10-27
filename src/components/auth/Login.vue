@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { loginFields } from "@constants/formFields";
 import Input from "@components/auth/Input.vue";
 import FormExtra from "@components/auth/FormExtra.vue";
