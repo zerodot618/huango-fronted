@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Topics from "../views/Topics.vue"
-import Sudoku from "../views/Sudoku.vue"
+// import Topics from "../views/Topics.vue"
+import LandingPage from "@views/LandingPage.vue"
+import Sudoku from "@views/Sudoku.vue"
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/",
-        name: "Topics",
-        component: Topics
+        name: "LandingPage",
+        component: LandingPage
     },
     {
         path: "/sudoku",
