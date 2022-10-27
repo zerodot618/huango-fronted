@@ -3,10 +3,11 @@
 </script>
 
 <template>
-    <p class="text-Lavender">Halaman Utama</p>
+    <div>
+        注册
+    </div>
 </template>
 
 <style scoped>
 
 </style>
-
