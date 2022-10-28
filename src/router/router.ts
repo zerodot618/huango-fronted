@@ -4,12 +4,18 @@ import LandingPage from "@views/LandingPage.vue"
 import Sudoku from "@views/Sudoku.vue"
 import Login from "@views/Login.vue"
 import Signup from "@views/Signup.vue"
+import Example from "@views/Example.vue"
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/",
         name: "LandingPage",
         component: LandingPage
+    },
+    {
+        path: "/example",
+        name: "Example",
+        component: Example
     },
     {
         path: "/sudoku",

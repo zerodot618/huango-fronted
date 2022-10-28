@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <p class="text-Lavender">Halaman Utama</p>
+
 </template>
 
 <style scoped>
